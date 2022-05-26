@@ -15,7 +15,7 @@ To send trace data to a Collector you'll want to use an exporter package, such a
 $ npm install --save @opentelemetry/exporter-trace-otlp-http
 ```
 
-Next, configure the exporter to point at and endpoint.
+Next, configure the exporter to point at an endpoint.
 
 For example, here's how to point at an instance of an [OpenTelemetry Collector](/docs/collector/getting-started/):
 
@@ -24,7 +24,7 @@ const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-http')
 const { SimpleSpanProcessor } = require('@opentelemetry/sdk-trace-base');
 
 const exporter = new OTLPTraceExporter({
-  // optional - url default value is http://localhost:55681/v1/traces
+  // optional - url default value is http://localhost:4318/v1/traces
   url: '<your-collector-endpoint>/v1/traces',
 
   // optional - collection of custom headers to be sent with each request, empty by default
